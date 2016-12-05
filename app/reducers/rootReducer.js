@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import * as types from '../constants/actionTypes.js';
+import {descrKey, creationStats} from '../components/character_creation/creationReducer.js';
 
 const initialState = {
 	renderLayer: 'MAIN_MENU'	
@@ -14,30 +15,10 @@ const renderLayer = (state = initialState.renderLayer, action) =>{
   }
 }
 
-const creationState = {
-  descrKey: 'default',
-  statCalc:{
-    endurance: 5,
-    attentiveness: 5,
-    cunning: 5,
-    charisma: 5,
-    statPoints: 5
-  }
-}
-
-const descrKey = (state = creationState.descrKey, action) =>{
-	switch(action.type){
-		case types.CREATION_SHOW_DESCR:
-      return action.descr
-
-		default:
-      return state
-	}
-}
-
- const rootReducer = combineReducers({
-   renderLayer,
-   descrKey
+const rootReducer = combineReducers({
+  creationStats, 
+  renderLayer,
+  descrKey
 }) 
 
  export default rootReducer;

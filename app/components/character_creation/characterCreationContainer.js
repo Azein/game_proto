@@ -1,10 +1,8 @@
 import  { connect } from 'react-redux';
-import CharacterCreation from '../components/character_creation/characterCreation.js';
-import {statsObject} from '../components/character_creation/creationText.js';
-
-import {changeLayer} from '../actions/generalActions.js';
-import {showDescr} from '../actions/charCreationActions.js';
-
+import CharacterCreation from './characterCreation.js';
+import {statsObject} from './creationText.js';
+import {changeLayer} from '../../actions/generalActions.js';
+import {showDescr} from './charCreationActions.js';
 
 const showActiveDescr = (key) => {
   if (key === 'default') {
@@ -17,7 +15,8 @@ const showActiveDescr = (key) => {
 const mapStateToProps = (state) => {
 	
 	return{
-		activeDescr: showActiveDescr(state.descrKey)  
+		activeDescr: showActiveDescr(state.descrKey),
+    stats: state.creationStats  
 	}
 }
 

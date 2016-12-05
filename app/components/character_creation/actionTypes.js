@@ -1,0 +1,2 @@
+export const CREATION_SHOW_DESCR = 'CREATION_SHOW_DESCR';
+export const STAT_PLUS = 'STAT_PLUS';

@@ -8,7 +8,7 @@ export default class CharacterCreation extends React.Component{
 	render(){
 		console.info(statsObject)
     let stat_rows = Object.keys(statsObject).map( (key) => 
-      <StatRow key={key} name={statsObject[key].name} showDescr={this.props.showDescr} nameKey={key} />
+      <StatRow stat={this.props.stats[key]} key={key} name={statsObject[key].name} showDescr={this.props.showDescr} nameKey={key} />
     )
 
     return(
@@ -28,7 +28,7 @@ export default class CharacterCreation extends React.Component{
               <div className={styles.stat__row }>
                 <span className={styles.stat__row__points}>Очков осталось</span>
                 <div className={styles.stat__row__value}>
-                  5
+                  {this.props.stats.statPoints}
                 </div>              
               </div>
             </div>

@@ -1,4 +1,4 @@
-import * as types from '../constants/actionTypes.js';
+import * as types from './actionTypes.js';
 
 
 export const showDescr = (descr) =>{

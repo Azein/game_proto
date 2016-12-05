@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {changeLayer} from '../actions/generalActions.js';
 import './app.css';
 import MainMenuContainer from '../containers/mainMenuContainer.js';
-import CharacterCreationContainer from '../containers/characterCreationContainer.js';
+import CharacterCreationContainer from '../components/character_creation/characterCreationContainer.js';
 
 const mapStateToProps = (state) =>{
   return{
