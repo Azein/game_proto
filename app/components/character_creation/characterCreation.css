@@ -1,0 +1,132 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #b2dfdb;
+  padding: 25px;
+  overflow-y: auto;
+}
+
+.box {
+  position: relative;
+  min-width: 800px;
+  max-width: 800px;
+  height: 600px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  animation-name: arrival;
+  animation-duration: 0.5s;
+}
+
+@keyframes arrival {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.header {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: #009688;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 40px;
+}
+
+.back__arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    color: #039be5;
+  }
+}
+
+.name__row {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.name__input {
+  border: none;
+  border-bottom: 2px solid #fff;
+  font-size: 32px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+
+  &:focus {
+    border-bottom: 2px solid #039be5;
+  }
+}
+
+.character__box__horizontal {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.horizontal__section__stats {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+.horizontal__section__descr {
+  flex: 1 1 60%;
+  height: 100%;
+}
+
+.stat__row {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  font-size: 24px;
+}
+
+.stat__row__stat {
+  cursor: pointer;
+
+  &:hover {
+    color: #039be5;
+  }
+}
+
+.stat__row__value {
+  align-self: flex-end;
+  width: 100px;
+  max-width: 100px;
+  height: 40px;
+}
+.stat__row__points {
+  cursor: pointer;
+  color: #009688;
+}

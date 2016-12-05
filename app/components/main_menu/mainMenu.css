@@ -1,0 +1,48 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #b3e5fc;
+}
+
+.box {
+  min-width: 400px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  animation-name: arrival;
+  animation-duration: 0.5s;
+}
+
+@keyframes arrival {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.header {
+  font-size: 34px;
+}
+
+.item {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.inactive {
+  color: #bdbdbd;
+}
+
+.active {
+  transition: all 0.3s ease-out;
+}
+
+.active:hover {
+  color: #039be5;
+}

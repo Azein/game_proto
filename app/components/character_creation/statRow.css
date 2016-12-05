@@ -1,0 +1,24 @@
+.stat__row {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  font-size: 24px;
+}
+
+.stat__row__stat {
+  cursor: pointer;
+
+  &:hover {
+    color: #039be5;
+  }
+}
+
+.stat__row__value {
+  align-self: flex-end;
+  width: 100px;
+  max-width: 100px;
+  height: 40px;
+}

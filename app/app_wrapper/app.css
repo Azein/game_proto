@@ -1,0 +1,28 @@
+html { font-size: 16px; }
+
+body {
+  line-height: 1.42857;
+  color: #333;
+  background-color: #f8f8f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+:global(.react__wrapper),
+.app__vertical__wrapper,
+.app__horizontal__wrapper {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
