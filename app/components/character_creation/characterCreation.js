@@ -4,11 +4,18 @@ import {statsObject} from './creationText.js';
 import StatRow from './statRow.js';
 
 export default class CharacterCreation extends React.Component{
-
+  
 	render(){
 		console.info(statsObject)
     let stat_rows = Object.keys(statsObject).map( (key) => 
-      <StatRow stat={this.props.stats[key]} key={key} name={statsObject[key].name} showDescr={this.props.showDescr} nameKey={key} />
+      <StatRow 
+        stat={this.props.stats[key]} 
+        key={key}
+        name={statsObject[key].name} 
+        showDescr={this.props.showDescr} 
+        statPlus={this.props.statPlus}
+        statMinus={this.props.statMinus}
+        nameKey={key} />
     )
 
     return(

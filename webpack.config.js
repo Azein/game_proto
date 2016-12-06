@@ -14,8 +14,8 @@ const config = {
 
   context: path.resolve(__dirname + '/app'),
   entry: {
-    app    : './index.js',
-    vendor : ['react', 'react-dom', 'redux', 'react-redux', 'redux-thunk']
+    app    : ['babel-polyfill', './index.js'],
+    vendor : ['react', 'react-dom', 'redux', 'react-redux', 'redux-thunk', 'redux-saga']
   },
 
   plugins: [

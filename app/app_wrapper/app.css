@@ -20,9 +20,18 @@ body,
   padding: 0;
 }
 
+i {
+  user-select: none;
+}
+
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
   outline: none;
+}
+
+@keyframes :global(arrival) {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

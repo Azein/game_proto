@@ -2,7 +2,7 @@ import  { connect } from 'react-redux';
 import CharacterCreation from './characterCreation.js';
 import {statsObject} from './creationText.js';
 import {changeLayer} from '../../actions/generalActions.js';
-import {showDescr} from './charCreationActions.js';
+import {showDescr, statPlus, statMinus} from './charCreationActions.js';
 
 const showActiveDescr = (key) => {
   if (key === 'default') {
@@ -29,7 +29,15 @@ const mapDispatchToProps = (dispatch) => {
 
 		showDescr: (descr) =>{
 			dispatch(showDescr(descr))
-		}
+		},
+
+    statPlus: (stat) => {
+      dispatch (statPlus(stat))
+    },
+    
+    statMinus: (stat) => {
+      dispatch (statMinus(stat))
+    }
 	}
 }
 

@@ -1,6 +1,14 @@
 import * as types from './actionTypes.js';
 
 
-export const showDescr = (descr) =>{
+export const showDescr = (descr) => {
   return {type: types.CREATION_SHOW_DESCR, descr}
+}
+
+export const statPlus = (stat) => {
+  return {type: types.STAT_PLUS, stat}
+}
+
+export const statMinus = (stat) => {
+  return {type: types.STAT_MINUS, stat}
 }
