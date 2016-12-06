@@ -15,6 +15,7 @@ const logger = store => next => action => {
  return result
 }
 
+
 const sagaMiddleware = createSagaMiddleware()
 
 const store = createStore(
