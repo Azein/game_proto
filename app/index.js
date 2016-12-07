@@ -26,16 +26,16 @@ const configureStore = () => {
 
   if (module.hot) {
     console.log('start')
-    module.hot.accept('./reducers/index'.default, () => {
+    module.hot.accept('./reducers/index'.default, function() {
       console.log('replace root reducer')
-      const nextRootReducer = require('./reducers/index').default;
-      store.replaceReducer(nextRootReducer);
-    })
+      var nextRootReducer = require('./reducers/index').default;
+      console.info(store) 
+      store.replaceReducer(nextRootReducer) ;
+    }())
     console.log('end') 
   }
   return store;
 }
-
 
 const store = configureStore();
 
@@ -43,23 +43,11 @@ sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppWrapper />
+    <AppWrapper /> 
   </Provider>
   ,
   document.getElementById('app')
 )
 
- /* if (module.hot) {
-    console.log('starttttt')
-    module.hot.accept('./reducers/index'.default, () => {
-      console.log('replace root reducer')
-      const nextRootReducer = require('./reducers/index').default;
-      store.replaceReducer(nextRootReducer);
-    })
-    console.log('end') 
-  }*/
 
-/*const store = createStore(
-  rootReducer,
-  applyMiddleware(logger, thunk, sagaMiddleware)
-) */////
+
