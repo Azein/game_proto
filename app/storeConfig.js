@@ -3,18 +3,30 @@ import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers/index';
 import thunk from 'redux-thunk';
 
+const logger = store => next => action => {
+  console.log('dispatching', action)
+  let result = next(action)
+  console.log('next state', store.getState())
+ return result
+};
 
- /* if (module.hot) {
-    console.log('starttttt')
-    module.hot.accept('./reducers/index'.default, () => {
+ export const sagaMiddleware = createSagaMiddleware();
+
+export default function configureStore () {
+  const store = createStore(
+    rootReducer,
+    applyMiddleware(logger, thunk, sagaMiddleware)
+  );
+
+  if (module.hot) {
+    console.log('start')
+    module.hot.accept('./reducers/index', function() {
       console.log('replace root reducer')
-      const nextRootReducer = require('./reducers/index').default;
-      store.replaceReducer(nextRootReducer);
-    })
+      var nextRootReducer = require('./reducers/index').default;
+      console.info(store) 
+      store.replaceReducer(nextRootReducer) ;
+    }())
     console.log('end') 
-  }*/
-
-/*const store = createStore(
-  rootReducer,
-  applyMiddleware(logger, thunk, sagaMiddleware)
-) */////
+  }
+  return store;
+}
