@@ -13,6 +13,7 @@ const devFlagPlugin = new webpack.DefinePlugin({
 const config = {
 
   context: path.resolve(__dirname + '/app'),
+  devtool: 'eval',
   entry: {
     app    : ['webpack-dev-server/client?http://localhost:8080','webpack/hot/dev-server', 'babel-polyfill', './index.js'],
     vendor : ['react', 'react-dom', 'redux', 'react-redux', 'redux-thunk', 'redux-saga']
