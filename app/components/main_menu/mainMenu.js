@@ -28,3 +28,6 @@ export default class MainMenu extends React.Component{
 MainMenu.propTypes = {
   changeLayer: React.PropTypes.func
 };
+
+
+/* dfgdfdffggggdsdываdg*/

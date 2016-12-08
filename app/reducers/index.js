@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import * as types from '../constants/actionTypes.js';
-import {descrKey, creationStats} from '../components/character_creation/creationReducer.js';
+import {descrKey, creationStats, origin} from '../components/character_creation/creationReducer.js';
 
 const initialState = {
 	renderLayer: 'MAIN_MENU'	
@@ -18,7 +18,8 @@ const renderLayer = (state = initialState.renderLayer, action) =>{
 const rootReducer = combineReducers({
   creationStats, 
   renderLayer,
-  descrKey
+  descrKey,
+  origin
 }) 
 
  export default rootReducer;

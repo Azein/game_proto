@@ -12,3 +12,7 @@ export const statPlus = (stat) => {
 export const statMinus = (stat) => {
   return {type: types.STAT_MINUS, stat}
 }
+
+export const changeOrigin = (origin) => {
+  return {type: types.CHANGE_ORIGIN, origin}
+}

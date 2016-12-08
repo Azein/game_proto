@@ -27,6 +27,8 @@ export default function configureStore () {
       store.replaceReducer(nextRootReducer) ;
     }())
     console.log('end') 
-  }
+  } 
   return store;
 }
+
+// 

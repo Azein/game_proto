@@ -24,4 +24,4 @@ export function* creationSaga() {
   yield takeEvery('STAT_MINUS', statMinus )
 }
 
-/* dfgdfdffggggdsdываd*/
+/* dfgdfdffggggdsdываddg*/

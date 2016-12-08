@@ -1,0 +1,10 @@
+
+.origin__row {
+  font-size: 18px;
+  color: #bdbdbd;
+  cursor: pointer;
+}
+
+.selected {
+  color: #4caf50;
+}
