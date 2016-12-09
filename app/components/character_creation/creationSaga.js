@@ -1,7 +1,7 @@
 import { put, select } from 'redux-saga/effects';
 import { takeEvery } from 'redux-saga'
 
-const getStatsObject = (state) => state.creationStats;
+const getStatsObject = (state) => state.creationReducer.creationStats;
 
 export function* statPlus(action) {
   const stat = action.stat;
@@ -24,4 +24,4 @@ export function* creationSaga() {
   yield takeEvery('STAT_MINUS', statMinus )
 }
 
-/* dfgdfdffggggdsdываddg*/
+/* dfgdfdffggggdsdываd*/

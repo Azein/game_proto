@@ -20,3 +20,6 @@ export const changeOrigin = (origin) => {
 export const changeName = (name) => {
   return {type: types.CHANGE_NAME, name}
 }
+export const loadCharacter = (character) => {
+  return {type: types.LOAD_CHARACTER, character}
+}

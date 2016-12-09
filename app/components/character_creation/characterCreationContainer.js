@@ -18,10 +18,10 @@ const showActiveDescr = (key) => {
 const mapStateToProps = (state) => {
 	
 	return{
-		activeDescr: showActiveDescr(state.descrKey),
-    stats: state.creationStats,
-    origin: state.origin,
-    characterName: state.characterName  
+		activeDescr: showActiveDescr(state.creationReducer.descrKey),
+    stats: state.creationReducer.creationStats,
+    origin: state.creationReducer.origin,
+    characterName: state.creationReducer.characterName  
 	}
 }
 

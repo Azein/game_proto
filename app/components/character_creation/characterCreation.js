@@ -6,12 +6,30 @@ import OriginRow from './originRow';
 
 export default class CharacterCreation extends React.Component{
   
+  saveCharacter = () => {
+    if (localStorage.getItem('savedProrabotkaCharacters') === null){
+      localStorage.setItem('savedProrabotkaCharacters', '{}' )
+      this.saveCharacter()
+    } else {
+     const savedCharacters = JSON.parse(localStorage.getItem('savedProrabotkaCharacters'));
+     savedCharacters[this.props.characterName] = {
+       characterName: this.props.characterName,
+       statCalc: this.props.stats,
+       origin: this.props.origin
+     }
+     localStorage.setItem('savedProrabotkaCharacters', JSON.stringify(savedCharacters))
+    }
+  }
+
   handleChangeName = (e) => {
-    this.props.changeName(e.target.value)
+    if (e.target.value.match(/^[a-zA-Zа-яА-я ]+$/) != null || e.target.value === ''){
+      this.props.changeName(e.target.value)
+    } else {
+      return false
+    }
   }
 
 	render(){
-		console.info(statsObject)
     let stat_rows = Object.keys(statsObject).map( (key) => 
       <StatRow 
         stat={this.props.stats[key]} 
@@ -65,7 +83,7 @@ export default class CharacterCreation extends React.Component{
                 onClick={() => this.props.changeLayer('CHARACTER_LIST')}>
                 Загрузить проработчика
               </div>
-              <div className={styles.export__btn}>Сохранить проработчика</div>
+              <div className={styles.export__btn} onClick={this.saveCharacter}>Сохранить проработчика</div>
             </div>
           </div>
         </div>
