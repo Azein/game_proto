@@ -16,3 +16,7 @@ export const statMinus = (stat) => {
 export const changeOrigin = (origin) => {
   return {type: types.CHANGE_ORIGIN, origin}
 }
+
+export const changeName = (name) => {
+  return {type: types.CHANGE_NAME, name}
+}

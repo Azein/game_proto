@@ -4,3 +4,4 @@ export const STAT_INCREMENT = 'STAT_INCREMENT';
 export const STAT_MINUS = 'STAT_MINUS';
 export const STAT_DECREMENT = 'STAT_DECREMENT';
 export const CHANGE_ORIGIN = 'CHANGE_ORIGIN';
+export const CHANGE_NAME ='CHANGE_NAME';

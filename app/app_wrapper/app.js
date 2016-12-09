@@ -4,6 +4,7 @@ import {changeLayer} from '../actions/generalActions.js';
 import './app.css';
 import MainMenuContainer from '../components/main_menu/mainMenuContainer.js';
 import CharacterCreationContainer from '../components/character_creation/characterCreationContainer.js';
+import CharacterList from '../components/character_list/characterList.js';
 
 const mapStateToProps = (state) =>{
   return{
@@ -23,11 +24,13 @@ class AppWrapper extends React.Component{
   render(){
     switch(this.props.renderLayer){
       case 'MAIN_MENU':
-        return(<MainMenuContainer />)
+        return <MainMenuContainer />
       case 'CHARACTER_CREATION':
-        return(<CharacterCreationContainer />)
+        return <CharacterCreationContainer />
+      case 'CHARACTER_LIST':
+        return <CharacterList />
       default:
-        return(<div></div>)
+        return null
     }
   }
 }

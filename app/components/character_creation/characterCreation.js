@@ -6,6 +6,10 @@ import OriginRow from './originRow';
 
 export default class CharacterCreation extends React.Component{
   
+  handleChangeName = (e) => {
+    this.props.changeName(e.target.value)
+  }
+
 	render(){
 		console.info(statsObject)
     let stat_rows = Object.keys(statsObject).map( (key) => 
@@ -29,12 +33,14 @@ export default class CharacterCreation extends React.Component{
     return(
       <div className={styles.container}>
         <div className={styles.box}>
-          <i className={'material-icons '+styles.back__arrow}  onClick={() => this.props.changeLayer('MAIN_MENU')}>
+          <i className={`material-icons  ${styles.back__arrow}`}  onClick={() => this.props.changeLayer('MAIN_MENU')}>
             reply
           </i>
           <h2 className={styles.header}>Создание нового проработчика</h2>
           <div className={styles.name__row}>
-            <input placeholder='Введите имя' className={styles.name__input}/>
+            <input ref='name__input' placeholder='Введите имя' value={this.props.characterName}
+              className={styles.name__input}
+              onChange={this.handleChangeName}/>
           </div>
           <div className={styles.character__box__horizontal}>
             <div className={styles.horizontal__section__stats}>
@@ -53,6 +59,13 @@ export default class CharacterCreation extends React.Component{
             <div className={styles.origin__section}>
               <h2>Происхождение</h2>
               {origin_rows}
+            </div>
+            <div className={styles.final__section}>
+              <div className={styles.import__btn}
+                onClick={() => this.props.changeLayer('CHARACTER_LIST')}>
+                Загрузить проработчика
+              </div>
+              <div className={styles.export__btn}>Сохранить проработчика</div>
             </div>
           </div>
         </div>

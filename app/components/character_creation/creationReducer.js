@@ -2,6 +2,7 @@ import * as types from './actionTypes.js';
 
 const creationState = {
   descrKey: 'default',
+  characterName: '',
   statCalc: {
     endurance: 5,
     attentiveness: 5,
@@ -46,6 +47,15 @@ export const origin = (state = creationState.origin, action) => {
   switch (action.type) {
     case types.CHANGE_ORIGIN:
       return {...creationState.origin, [action.origin]: true}
+    default:
+      return state
+  }
+}
+
+export const characterName = (state =creationState.characterName, action) => {
+  switch (action.type) {
+    case types.CHANGE_NAME:
+      return action.name
     default:
       return state
   }

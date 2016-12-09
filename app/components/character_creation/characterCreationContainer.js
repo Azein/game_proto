@@ -2,7 +2,7 @@ import  { connect } from 'react-redux';
 import CharacterCreation from './characterCreation.js';
 import {statsObject, originObject} from './creationText.js';
 import {changeLayer} from '../../actions/generalActions.js';
-import {showDescr, statPlus, statMinus, changeOrigin} from './charCreationActions.js';
+import {showDescr, statPlus, statMinus, changeOrigin, changeName} from './charCreationActions.js';
 
 const showActiveDescr = (key) => {
   if (key === 'default') {
@@ -20,7 +20,8 @@ const mapStateToProps = (state) => {
 	return{
 		activeDescr: showActiveDescr(state.descrKey),
     stats: state.creationStats,
-    origin: state.origin  
+    origin: state.origin,
+    characterName: state.characterName  
 	}
 }
 
@@ -45,6 +46,10 @@ const mapDispatchToProps = (dispatch) => {
 
     changeOrigin: (origin) => {
       dispatch (changeOrigin(origin))
+    },
+
+    changeName: (name) => {
+      dispatch (changeName(name))
     }
 	}
 }

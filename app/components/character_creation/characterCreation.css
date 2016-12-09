@@ -128,3 +128,38 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.final__section {
+  width: 50%;
+  min-height: 30%;
+  padding: 10px;
+  display: flex;
+}
+
+.export__btn {
+  background-color: #009688;
+  color: #fff;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  flex-grow: 0;
+  cursor: pointer;
+  text-align: center;
+  &:hover {
+    background-color: #00695c;
+  }
+}
+
+.import__btn {
+  background-color: #2196f3;
+  color: #fff;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  flex-grow: 0; 
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background-color: #1565c0;
+  }
+}
