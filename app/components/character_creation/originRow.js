@@ -12,3 +12,10 @@ export default class OriginRow extends React.Component {
     )
   }
 }
+
+OriginRow.propTypes = {
+  name: React.PropTypes.string,
+  nameKey: React.PropTypes.string,
+  changeOrigin: React.PropTypes.func,
+  originSelected: React.PropTypes.bool
+}

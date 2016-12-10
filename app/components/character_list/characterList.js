@@ -37,4 +37,9 @@ export default class CharacterList extends React.Component {
   }
 }
 
+CharacterList.propTypes = {
+  changeLayer: React.PropTypes.func,
+  loadCharacter: React.PropTypes.func
+}
+
 

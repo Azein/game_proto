@@ -21,3 +21,12 @@ export default class StatRow extends React.Component {
     )
   }
 }
+
+StatRow.propTypes = {
+  showDescr: React.PropTypes.func,
+  statPlus: React.PropTypes.func,
+  statMinus: React.PropTypes.func,
+  stat: React.PropTypes.number,
+  name: React.PropTypes.string,
+  nameKey: React.PropTypes.string
+}

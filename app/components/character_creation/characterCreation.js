@@ -95,5 +95,12 @@ export default class CharacterCreation extends React.Component{
 CharacterCreation.propTypes = {
   showDescr: React.PropTypes.func,
   activeDescr:  React.PropTypes.string,
-  changeLayer:  React.PropTypes.func
+  changeLayer:  React.PropTypes.func,
+  statPlus: React.PropTypes.func,
+  statMinus: React.PropTypes.func,
+  changeOrigin: React.PropTypes.func,
+  stats: React.PropTypes.obj,
+  changeName: React.PropTypes.func,
+  origin: React.PropTypes.obj,
+  characterName: React.PropTypes.string
 }; 
