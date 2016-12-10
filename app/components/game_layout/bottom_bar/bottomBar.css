@@ -1,0 +1,6 @@
+.bottom__bar {
+  width: 100%;
+  height: 100px;
+  flex-grow: 0;
+  background-color: #fff;
+}

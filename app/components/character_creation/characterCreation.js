@@ -84,6 +84,10 @@ export default class CharacterCreation extends React.Component{
                 Загрузить проработчика
               </div>
               <div className={styles.export__btn} onClick={this.saveCharacter}>Сохранить проработчика</div>
+              <div className={styles.start__btn} 
+                onClick={() => this.props.changeLayer('GAME_LAYOUT')}>
+                Начать игру
+              </div>
             </div>
           </div>
         </div>
