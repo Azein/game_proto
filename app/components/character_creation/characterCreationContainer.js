@@ -1,7 +1,7 @@
 import  { connect } from 'react-redux';
 import CharacterCreation from './characterCreation.js';
 import {statsObject, originObject} from './creationText.js';
-import {changeLayer} from '../../actions/generalActions.js';
+import {changeLayer, gameStart} from '../../actions/generalActions.js';
 import {showDescr, statPlus, statMinus, changeOrigin, changeName} from './charCreationActions.js';
 
 const showActiveDescr = (key) => {
@@ -31,6 +31,10 @@ const mapDispatchToProps = (dispatch) => {
 		changeLayer: (layer) => {
 			dispatch(changeLayer(layer))
 		},
+
+    gameStart: (createdCharacter) => {
+      dispatch(gameStart(createdCharacter))
+    },
 
 		showDescr: (descr) =>{
 			dispatch(showDescr(descr))

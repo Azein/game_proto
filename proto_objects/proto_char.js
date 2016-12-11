@@ -8,18 +8,26 @@ var character_proto = {
 
 	stats: {
     endurance: 5,
-    intellect: 5,
-    charisma:  5,
-
+    attentiveness: 5,
+    cunning: 10,
+    charisma: 5
 	},
+
+  origin: {
+    aviamech: false,
+    student: false,
+    devourer: true,
+    scientist: false,
+    migrant: false,
+    pracevach: false
+  },
 
 	skills:{
-		excel_general: 0,
-		excel_columns: 0,
-		excel_rows: 0,
-		socializing: 0,
-
+		ms_excel: 0,
+    prorabotka: 0
 	},
+
+  freeSkills: 0,
 
 	perks:{
 		lucky_worker: false,
@@ -28,12 +36,7 @@ var character_proto = {
 	},
 
 	state_params: {
-    
-    sanity: 100,
-    stamina: 100,
-    mental_energy: 100
-
-	},
-
+    energy: 10
+	}
 
 }

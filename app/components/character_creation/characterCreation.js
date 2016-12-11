@@ -21,6 +21,15 @@ export default class CharacterCreation extends React.Component{
     }
   }
 
+  startGame = () => {
+    const createdCharacter = {
+      characterName: this.props.characterName,
+      stats: this.props.stats,
+      origin: this.props.origin
+    }
+    this.props.gameStart(createdCharacter)
+  }
+
   handleChangeName = (e) => {
     if (e.target.value.match(/^[a-zA-Zа-яА-я ]+$/) != null || e.target.value === ''){
       this.props.changeName(e.target.value)
@@ -85,7 +94,7 @@ export default class CharacterCreation extends React.Component{
               </div>
               <div className={styles.export__btn} onClick={this.saveCharacter}>Сохранить проработчика</div>
               <div className={styles.start__btn} 
-                onClick={() => this.props.changeLayer('GAME_LAYOUT')}>
+                onClick={this.startGame}>
                 Начать игру
               </div>
             </div>
