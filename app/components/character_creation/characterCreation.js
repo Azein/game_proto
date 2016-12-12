@@ -11,13 +11,13 @@ export default class CharacterCreation extends React.Component{
       localStorage.setItem('savedProrabotkaCharacters', '{}' )
       this.saveCharacter()
     } else {
-     const savedCharacters = JSON.parse(localStorage.getItem('savedProrabotkaCharacters'));
-     savedCharacters[this.props.characterName] = {
-       characterName: this.props.characterName,
-       statCalc: this.props.stats,
-       origin: this.props.origin
-     }
-     localStorage.setItem('savedProrabotkaCharacters', JSON.stringify(savedCharacters))
+      const savedCharacters = JSON.parse(localStorage.getItem('savedProrabotkaCharacters'));
+      savedCharacters[this.props.characterName] = {
+        characterName: this.props.characterName,
+        statCalc: this.props.stats,
+        origin: this.props.origin
+      }
+      localStorage.setItem('savedProrabotkaCharacters', JSON.stringify(savedCharacters))
     }
   }
 
@@ -39,22 +39,34 @@ export default class CharacterCreation extends React.Component{
   }
 
 	render(){
+    const {
+      stats,
+      showDescr,
+      statPlus,
+      statMinus,
+      origin,
+      changeOrigin,
+      changeLayer,
+      characterName,
+      activeDescr, 
+    } = this.props;
+
     let stat_rows = Object.keys(statsObject).map( (key) => 
       <StatRow 
-        stat={this.props.stats[key]} 
+        stat={stats[key]} 
         key={key}
         name={statsObject[key].name} 
-        showDescr={this.props.showDescr} 
-        statPlus={this.props.statPlus}
-        statMinus={this.props.statMinus}
+        showDescr={showDescr} 
+        statPlus={statPlus}
+        statMinus={statMinus}
         nameKey={key} />
     )
     let origin_rows = Object.keys(originObject).map( (key) => 
       <OriginRow 
         key={key}
         name={originObject[key].name}
-        originSelected={this.props.origin[key]} 
-        changeOrigin={this.props.changeOrigin}
+        originSelected={origin[key]} 
+        changeOrigin={changeOrigin}
         nameKey={key} />
     )
     return(
@@ -65,7 +77,7 @@ export default class CharacterCreation extends React.Component{
           </i>
           <h2 className={styles.header}>Создание нового проработчика</h2>
           <div className={styles.name__row}>
-            <input ref='name__input' placeholder='Введите имя' value={this.props.characterName}
+            <input ref='name__input' placeholder='Введите имя' value={characterName}
               className={styles.name__input}
               onChange={this.handleChangeName}/>
           </div>
@@ -81,7 +93,7 @@ export default class CharacterCreation extends React.Component{
               </div>
             </div>
              <div className={styles.horizontal__section__descr}>
-               {this.props.activeDescr}
+               {activeDescr}
             </div>
             <div className={styles.origin__section}>
               <h2>Происхождение</h2>
@@ -89,7 +101,7 @@ export default class CharacterCreation extends React.Component{
             </div>
             <div className={styles.final__section}>
               <div className={styles.import__btn}
-                onClick={() => this.props.changeLayer('CHARACTER_LIST')}>
+                onClick={() => changeLayer('CHARACTER_LIST')}>
                 Загрузить проработчика
               </div>
               <div className={styles.export__btn} onClick={this.saveCharacter}>Сохранить проработчика</div>
@@ -112,6 +124,7 @@ CharacterCreation.propTypes = {
   statPlus: React.PropTypes.func,
   statMinus: React.PropTypes.func,
   changeOrigin: React.PropTypes.func,
+  gameStart: React.PropTypes.func,
   stats: React.PropTypes.obj,
   changeName: React.PropTypes.func,
   origin: React.PropTypes.obj,

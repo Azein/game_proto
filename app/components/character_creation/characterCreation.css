@@ -176,7 +176,7 @@
   text-align: center;
   cursor: pointer;
   background-color: #4caf50;
-  
+
   &:hover {
     background-color: #388e3c;
   }

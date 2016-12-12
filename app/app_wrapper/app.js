@@ -15,10 +15,10 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) => {
 	return{
-		changeLayer: (layer) => {
-			dispatch(changeLayer(layer))
-		}
-	}
+    changeLayer: (layer) => {
+      dispatch(changeLayer(layer))
+    }
+  }
 }
 
 class AppWrapper extends React.Component{  

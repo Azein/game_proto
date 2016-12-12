@@ -2,7 +2,7 @@
 
 var character_proto = {
 
-	name: 'Test Char',
+	characterName: 'Test Char',
 
 	level: 1,
 
