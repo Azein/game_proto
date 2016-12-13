@@ -3,6 +3,7 @@ import styles from './characterCreation.css';
 import {statsObject, originObject} from './creationText.js';
 import StatRow from './statRow.js';
 import OriginRow from './originRow';
+import {nameEntered, originSelected} from './creationRules.js';
 
 export default class CharacterCreation extends React.Component{
   
@@ -104,11 +105,15 @@ export default class CharacterCreation extends React.Component{
                 onClick={() => changeLayer('CHARACTER_LIST')}>
                 Загрузить проработчика
               </div>
-              <div className={styles.export__btn} onClick={this.saveCharacter}>Сохранить проработчика</div>
-              <div className={styles.start__btn} 
-                onClick={this.startGame}>
-                Начать игру
-              </div>
+              {
+                <div className={styles.export__btn} onClick={this.saveCharacter}>Сохранить проработчика</div>
+              }
+              {
+                <div className={styles.start__btn} 
+                  onClick={this.startGame}>
+                  Начать игру
+                </div>
+              }
             </div>
           </div>
         </div>
