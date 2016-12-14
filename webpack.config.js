@@ -5,6 +5,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const assets  = require('postcss-assets');
 const nested = require('postcss-nested');
+const composes = require('postcss-composes');
 
 const devFlagPlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
@@ -93,6 +94,7 @@ const config = {
     return [
       assets,
       nested,
+      composes,
       autoprefixer
     ];
   }

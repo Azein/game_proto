@@ -33,6 +33,8 @@
     "eslint-plugin-react": "^6.3.0",
     "file-loader": "^0.9.0",
     "postcss-assets": "^4.1.0",
+    "postcss-composes": "^0.1.0",
+    "postcss-extend": "^1.0.5",
     "postcss-loader": "^1.2.0",
     "postcss-nested": "^1.0.0",
     "react": "^15.3.2",

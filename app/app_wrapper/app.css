@@ -12,7 +12,7 @@ body {
 
 html,
 body,
-:global(.react__wrapper),
+.react__wrapper,
 .app__vertical__wrapper,
 .app__horizontal__wrapper {
   height: 100%;
@@ -37,6 +37,10 @@ select:focus,
 textarea:focus,
 button:focus {
   outline: none;
+}
+
+.transition__one {
+  transition: all 0.1s ease-out;
 }
 
 @keyframes :global(arrival) {

@@ -3,7 +3,7 @@ import styles from './characterCreation.css';
 import {statsObject, originObject} from './creationText.js';
 import StatRow from './statRow.js';
 import OriginRow from './originRow';
-import {nameEntered, originSelected} from './creationRules.js';
+import {testUserInput} from './creationRules.js';
 
 export default class CharacterCreation extends React.Component{
   
@@ -51,6 +51,8 @@ export default class CharacterCreation extends React.Component{
       characterName,
       activeDescr, 
     } = this.props;
+
+   const testsPassed = testUserInput(characterName, origin, stats.statPoints)
 
     let stat_rows = Object.keys(statsObject).map( (key) => 
       <StatRow 
@@ -106,13 +108,19 @@ export default class CharacterCreation extends React.Component{
                 Загрузить проработчика
               </div>
               {
-                <div className={styles.export__btn} onClick={this.saveCharacter}>Сохранить проработчика</div>
+                testsPassed
+                  ? <div className={styles.export__btn} onClick={this.saveCharacter}>Сохранить проработчика</div>
+                  : <div className={`${styles.export__btn} ${styles.disabled}`} >Сохранить проработчика</div>
               }
               {
-                <div className={styles.start__btn} 
-                  onClick={this.startGame}>
-                  Начать игру
-                </div>
+                testsPassed
+                  ? <div className={styles.start__btn} 
+                      onClick={this.startGame}>
+                      Начать игру
+                    </div>
+                  : <div className={`${styles.start__btn} ${styles.disabled}`}>
+                      Начать игру
+                    </div>
               }
             </div>
           </div>

@@ -1,15 +1,24 @@
-export const nameEntered = (name) => {
-  name.length > 0
+const nameEntered = (name) => {
+  return name.length > 0
     ?  true
     :  false
 }
 
-export const originSelected = (origin) => {
-  let selected = false;
-  Object.keys(origin).map( (key) => {
-    if(origin[key]){
-      selected = true;
-    }
-  })
-  return selected
+const originSelected = (origin) => {
+  return Object.keys(origin).some(key => origin[key]) 
+}
+
+const statsUsed = (stats) => {
+  return stats === 0
+    ? true
+    : false
+}
+
+export const testUserInput = (name, origin, stats) => {
+  const tests = [
+    nameEntered(name),
+    originSelected(origin),
+    statsUsed(stats)
+  ]
+  return !tests.some(e => e === false )
 }

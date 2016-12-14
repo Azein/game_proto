@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {changeLayer} from '../actions/generalActions.js';
-import './app.css';
+import styles from './app.css';
 import MainMenuContainer from '../components/main_menu/mainMenuContainer.js';
 import CharacterCreationContainer from '../components/character_creation/characterCreationContainer.js';
 import CharacterListContainer from '../components/character_list/characterListContainer.js';
