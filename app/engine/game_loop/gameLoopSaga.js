@@ -3,8 +3,8 @@ import { takeEvery, delay } from 'redux-saga';
 
 export function* gameLoop() {
   while(true){
-     yield call(delay, 1000)
-     yield (console.log('it runs'))
+    yield call(delay, 1000)
+    yield put({ type: 'TICK_PASSED'})
   }
 }
 

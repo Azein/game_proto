@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import * as types from '../constants/actionTypes.js';
 import creationReducer from '../components/character_creation/creationReducer.js';
 import gameCharacter from '../engine/character/characterReducer.js';
+import world from '../engine/world/worldReducer.js';
 const initialState = {
 	renderLayer: 'MAIN_MENU'	
 }
@@ -22,7 +23,8 @@ const renderLayer = (state = initialState.renderLayer, action) =>{
 const rootReducer = combineReducers({
   renderLayer,
   creationReducer,
-  gameCharacter
+  gameCharacter,
+  world
 })
 
  export default rootReducer;
