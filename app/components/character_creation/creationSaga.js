@@ -1,4 +1,4 @@
-import { put, select } from 'redux-saga/effects';
+import { put, select} from 'redux-saga/effects';
 import { takeEvery } from 'redux-saga'
 
 const getStatsObject = (state) => state.creationReducer.creationStats;
@@ -22,6 +22,5 @@ export function* statMinus(action) {
 export function* creationSaga() {
   yield takeEvery('STAT_PLUS', statPlus )
   yield takeEvery('STAT_MINUS', statMinus )
-}
 
-/* dfgdfdffggggdsdываd*/
+}

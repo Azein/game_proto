@@ -5,7 +5,7 @@ import StatRow from './statRow.js';
 import OriginRow from './originRow';
 import {testUserInput} from './creationRules.js';
 
-export default class CharacterCreation extends React.Component{
+export default class CharacterCreation extends React.Component {
   
   saveCharacter = () => {
     if (localStorage.getItem('savedProrabotkaCharacters') === null){
