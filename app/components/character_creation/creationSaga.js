@@ -3,7 +3,7 @@ import { takeEvery } from 'redux-saga'
 
 const getStatsObject = (state) => state.creationReducer.creationStats;
 
-export function* statPlus(action) {
+ function* statPlus(action) {
   const stat = action.stat;
   const statsObject = yield select(getStatsObject)
   if (statsObject.statPoints > 0 && statsObject[stat] < 10) {
@@ -11,7 +11,7 @@ export function* statPlus(action) {
   }
 }
 
-export function* statMinus(action) {
+ function* statMinus(action) {
   const stat = action.stat;
   const statsObject = yield select(getStatsObject)
   if (statsObject[stat] > 1) {

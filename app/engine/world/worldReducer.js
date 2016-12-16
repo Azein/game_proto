@@ -12,8 +12,7 @@ const time = (state = initialState, action) => {
   switch(action.type){
     case types.TICK_PASSED:
       return {
-        ...state,
-        ticksPassed: state.ticksPassed + 1
+        ...action.time
       }
     default:
       return state
