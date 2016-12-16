@@ -13,13 +13,20 @@ function* returnTimeObject() {
   console.info(stateTime)
   const time = timeCounter(stateTime)
       .map(obj => { 
-        console.info(obj)
         obj.ticksPassed = obj.ticksPassed + 1; 
         return obj 
       })
       .map(obj => { 
-        console.info(obj)
-        obj.daysPassed = Math.floor(obj.ticksPassed / 5 ); 
+        obj.daysPassed = Math.floor(obj.ticksPassed / 50 ); 
+        return obj 
+      })
+      .map(obj => { 
+        obj.weeksPassed = Math.floor(obj.daysPassed / 7 ); 
+        return obj 
+      })
+      .map(obj => { 
+        obj.monthsPassed = Math.floor(obj.weeksPassed / 4 );
+        console.info(obj) 
         return obj 
       })
       .fold(obj => obj)
