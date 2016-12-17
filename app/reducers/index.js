@@ -3,6 +3,7 @@ import * as types from '../constants/actionTypes.js';
 import creationReducer from '../components/character_creation/creationReducer.js';
 import gameCharacter from '../engine/character/characterReducer.js';
 import world from '../engine/world/worldReducer.js';
+import gameLoop from '../engine/game_loop/gameLoopReducer.js';
 const initialState = {
 	renderLayer: 'MAIN_MENU'	
 }
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
   renderLayer,
   creationReducer,
   gameCharacter,
-  world
+  world,
+  gameLoop
 })
 
  export default rootReducer;

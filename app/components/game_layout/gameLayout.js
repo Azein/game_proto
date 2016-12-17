@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './gameLayout.css';
 import TopBar from './top_bar/topBar.js';
 import MainViewport from './main_viewport/mainViewport.js';
-import BottomBar from './bottom_bar/bottomBar.js';
+import BottomBarContainer from './bottom_bar/bottomBarContainer.js';
 
 export default class GameLayout extends React.Component {
   render(){
@@ -10,7 +10,7 @@ export default class GameLayout extends React.Component {
       <div className={styles.container}>
         <TopBar />
         <MainViewport />
-        <BottomBar />
+        <BottomBarContainer />
       </div>
     )
   }
