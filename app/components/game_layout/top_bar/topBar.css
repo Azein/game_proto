@@ -1,6 +1,29 @@
 .top__bar {
+  position: absolute;
+  top: 0;
   width: 100%;
-  height: 50px;
+  flex-grow: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.character__bar {
+  border-radius: 0 0 0 25px;
   flex-grow: 0;
   background-color: #fff;
+  padding: 5px 20px;
+  font-size: 24px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.time__stats {
+  border-radius: 0 0 25px 25px;
+  background-color: #fff;
+  padding: 5px 20px;
+  font-size: 20px;
+  text-align: left;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
