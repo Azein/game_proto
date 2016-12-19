@@ -18,3 +18,8 @@ export default class TopBar extends React.Component {
     )
   }
 }
+
+TopBar.propTypes = {
+  timeObject: React.PropTypes.obj,
+  characterName: React.PropTypes.string
+}

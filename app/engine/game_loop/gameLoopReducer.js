@@ -1,5 +1,5 @@
 import * as types from './gameLoopActionTypes.js';
-import { combineReducers } from 'redux';
+//import { combineReducers } from 'redux';
 
 const initialState = {
   worldProcess: true
@@ -16,6 +16,11 @@ const gameLoop = (state = initialState, action) => {
       return {
         ...state,
         worldProcess: true
+      }
+    case 'DISPLAY_SAVE_LOAD':
+      return {
+        ...state,
+        worldProcess: false
       }
     default:
       return state

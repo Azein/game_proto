@@ -16,6 +16,8 @@ const renderLayer = (state = initialState.renderLayer, action) =>{
       return 'CHARACTER_CREATION'
     case types.GAME_START:
       return 'GAME_LAYOUT'
+    case 'DISPLAY_SAVE_LOAD':
+      return 'SAVE_LOAD'
     default:
       return state
   }

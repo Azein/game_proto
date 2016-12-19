@@ -1,1 +1,24 @@
-saveLoad.css
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #c5cae9;
+  padding: 50px;
+}
+
+.box {
+  flex-grow: 0;
+  position: relative;
+  min-width: 800px;
+  max-width: 800px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  animation-name: 'app__arrival';
+  animation-duration: 0.5s;
+}

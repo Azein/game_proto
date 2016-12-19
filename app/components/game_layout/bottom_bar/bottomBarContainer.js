@@ -1,10 +1,7 @@
 import  { connect } from 'react-redux';
 import BottomBar from './bottomBar.js';
 import { gamePause, gameContinue } from '../../../engine/game_loop/gameLoopActions.js';
-
-/*const mapStateToProps = (state) => {
-
-} */
+import { displaySaveLoad } from '../../../engine/game_data/gameDataActions.js';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -13,6 +10,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     gameContinue: () => {
       dispatch(gameContinue())
+    },
+    displaySaveLoad: (status) => {
+      dispatch(displaySaveLoad(status))
     }
   }
 
