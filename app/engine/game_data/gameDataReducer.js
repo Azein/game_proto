@@ -1,4 +1,4 @@
-import * as types from './gameDataActionTypes.js';
+import * as globalTypes from '../../constants/globalActionTypes.js';
 import { combineReducers } from 'redux';
 
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
 
 const saveLoadStatus = (state = initialState.saveLoadStatus, action) => {
   switch(action.type){
-    case types.DISPLAY_SAVE_LOAD:
+    case globalTypes.DISPLAY_SAVE_LOAD:
       return action.status
     default:
       return state

@@ -46,7 +46,15 @@ function* gameLoop() {
   }
 }
 
+function* continueLoop() {
+  const loopState = yield select(getLoopState)
+  if(!loopState) { 
+    yield put ({type: 'LOOP_CONTINUE'})
+    yield* gameLoop()
+  }
+}
+
 export function* gameLoopSaga() {
   yield takeEvery('GAME_START', gameLoop )
-  yield takeEvery('GAME_CONTINUE', gameLoop )
+  yield takeEvery('GAME_CONTINUE', continueLoop )
 }

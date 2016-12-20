@@ -12,7 +12,7 @@ const gameLoop = (state = initialState, action) => {
         ...state,
         worldProcess: false
       }
-    case types.GAME_CONTINUE:
+    case types.LOOP_CONTINUE:
       return {
         ...state,
         worldProcess: true

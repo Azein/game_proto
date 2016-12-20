@@ -1,4 +1,5 @@
 import * as types from './actionTypes.js';
+import * as globalTypes from '../../constants/globalActionTypes.js';
 
 
 export const showDescr = (descr) => {
@@ -21,5 +22,5 @@ export const changeName = (name) => {
   return {type: types.CHANGE_NAME, name}
 }
 export const loadCharacter = (character) => {
-  return {type: types.LOAD_CHARACTER, character}
+  return {type: globalTypes.LOAD_CHARACTER, character}
 }

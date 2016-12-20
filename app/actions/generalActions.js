@@ -1,10 +1,10 @@
-import * as types from '../constants/actionTypes.js';
+import * as globalTypes from '../constants/globalActionTypes.js';
 
 
 export const changeLayer = (layer) => {
-  return {type: types.CHANGE_LAYER, layer}
+  return {type: globalTypes.CHANGE_LAYER, layer}
 }
 
 export const gameStart = (createdCharacter) => {
-  return {type: types.GAME_START, createdCharacter}
+  return {type: globalTypes.GAME_START, createdCharacter}
 }

@@ -138,8 +138,8 @@ CharacterCreation.propTypes = {
   statMinus: React.PropTypes.func,
   changeOrigin: React.PropTypes.func,
   gameStart: React.PropTypes.func,
-  stats: React.PropTypes.obj,
+  stats: React.PropTypes.object,
   changeName: React.PropTypes.func,
-  origin: React.PropTypes.obj,
+  origin: React.PropTypes.object,
   characterName: React.PropTypes.string
 }; 
