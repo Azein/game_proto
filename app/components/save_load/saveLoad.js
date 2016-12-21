@@ -6,6 +6,10 @@ export default class SaveLoad extends React.Component {
     return(
       <div className={styles.container}>
         <div className={styles.box}>
+        { this.props.status === 'save' &&
+          <div className={styles.new__save}>
+          </div>
+        }
         </div>
       </div>
     )

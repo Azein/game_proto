@@ -39,6 +39,7 @@ button:focus {
   outline: none;
 }
 
+/*Shared animations and visual effects*/
 .transition__one {
   transition: all 0.1s ease-out;
 }
@@ -46,4 +47,30 @@ button:focus {
 @keyframes :global(arrival) {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+
+/*Shared UI styles*/
+
+.teal__btn {
+  background-color: #009688;
+  color: #fff;
+  min-width: 100px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 40px;
+  line-height: 40px;
+  flex-grow: 0;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.1s ease-out;
+
+  &:hover {
+    background-color: #00695c;
+  }
+  
+  &.disabled {
+    color: #333;
+    background-color: #b0bec5;
+  }
 }

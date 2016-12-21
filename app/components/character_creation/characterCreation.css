@@ -160,6 +160,7 @@
 }
 
 .import__btn {
+  composes: transition__one from '../../app_wrapper/app.css';
   background-color: #2196f3;
   color: #fff;
   width: 195px;

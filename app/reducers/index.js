@@ -4,6 +4,7 @@ import creationReducer from '../components/character_creation/creationReducer.js
 import gameCharacter from '../engine/character/characterReducer.js';
 import world from '../engine/world/worldReducer.js';
 import gameLoop from '../engine/game_loop/gameLoopReducer.js';
+import gameData from '../engine/game_data/gameDataReducer.js';
 
 const initialState = {
 	renderLayer: 'MAIN_MENU'	
@@ -29,7 +30,8 @@ const rootReducer = combineReducers({
   creationReducer,
   gameCharacter,
   world,
-  gameLoop
+  gameLoop,
+  gameData
 })
 
  export default rootReducer;
