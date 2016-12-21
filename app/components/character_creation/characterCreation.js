@@ -1,25 +1,15 @@
-import  React from 'react';
+import React from 'react';
 import styles from './characterCreation.css';
 import {statsObject, originObject} from './creationText.js';
 import StatRow from './statRow.js';
 import OriginRow from './originRow';
-import {testUserInput} from './creationRules.js';
+import { testUserInput } from './creationRules.js';
+import { saveCharacter } from '../../engine/game_data/dataWorkers.js';
 
 export default class CharacterCreation extends React.Component {
   
   saveCharacter = () => {
-    if (localStorage.getItem('savedProrabotkaCharacters') === null){
-      localStorage.setItem('savedProrabotkaCharacters', '{}' )
-      this.saveCharacter()
-    } else {
-      const savedCharacters = JSON.parse(localStorage.getItem('savedProrabotkaCharacters'));
-      savedCharacters[this.props.characterName] = {
-        characterName: this.props.characterName,
-        statCalc: this.props.stats,
-        origin: this.props.origin
-      }
-      localStorage.setItem('savedProrabotkaCharacters', JSON.stringify(savedCharacters))
-    }
+    saveCharacter(this.props.characterName, this.props.stats, this.props.origin )
   }
 
   startGame = () => {

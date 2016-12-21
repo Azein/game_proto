@@ -52,7 +52,7 @@ button:focus {
 
 /*Shared UI styles*/
 
-.teal__btn {
+.btn__teal {
   background-color: #009688;
   color: #fff;
   min-width: 100px;

@@ -3,7 +3,9 @@ import SaveLoad from './SaveLoad.js';
 
 const mapStateToProps = (state) => {
   return {
-    status: state.gameData.saveLoadStatus
+    status: state.gameData.saveLoadStatus,
+    gameCharacter: state.gameCharacter,
+    world: state.world
   }
 }
 
