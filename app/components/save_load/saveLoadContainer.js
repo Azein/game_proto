@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import SaveLoad from './SaveLoad.js';
+import { loadGame } from '../../engine/game_data/gameDataActions.js';
 
 const mapStateToProps = (state) => {
   return {
@@ -9,9 +10,17 @@ const mapStateToProps = (state) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadGame: (gameCharacter, world) => {
+      dispatch(loadGame(gameCharacter, world))
+    }
+  }
+}
+
 const SaveLoadContainer = connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
   )(SaveLoad)
 
 export default SaveLoadContainer;

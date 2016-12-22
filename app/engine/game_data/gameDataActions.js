@@ -7,3 +7,11 @@ export const displaySaveLoad = (status) => {
     status
   }
 }
+
+export const loadGame = (gameCharacter, world) => {
+  return {
+    type: globalTypes.LOAD_GAME,
+    gameCharacter,
+    world
+  }
+}

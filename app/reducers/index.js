@@ -20,6 +20,8 @@ const renderLayer = (state = initialState.renderLayer, action) => {
       return 'GAME_LAYOUT'
     case globalTypes.DISPLAY_SAVE_LOAD:
       return 'SAVE_LOAD'
+    case globalTypes.LOAD_GAME:
+      return 'GAME_LAYOUT'
     default:
       return state
   }

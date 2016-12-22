@@ -2,7 +2,8 @@ import * as globalTypes from '../../constants/globalActionTypes.js';
 import { combineReducers } from 'redux';
 
 const initialState = {
-  saveLoadStatus: 'save'
+  saveLoadStatus: 'save',
+  beingLoaded: false
 }
 
 const saveLoadStatus = (state = initialState.saveLoadStatus, action) => {

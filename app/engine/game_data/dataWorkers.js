@@ -17,7 +17,7 @@ export const saveCharacter = (name, stats, origin) => {
 export const saveGame = (fileName, gameCharacter, world) => {
   if(localStorage.getItem('savedProrabotkaGames') === null){
     localStorage.setItem('savedProrabotkaGames', '{}' )
-    saveCharacter(fileName, gameCharacter, world)
+    saveGame(fileName, gameCharacter, world)
   } else {
     const savedProrabotkaGames = JSON.parse(localStorage.getItem('savedProrabotkaGames'));
     savedProrabotkaGames[fileName] = {
@@ -26,4 +26,9 @@ export const saveGame = (fileName, gameCharacter, world) => {
     }
     localStorage.setItem('savedProrabotkaGames', JSON.stringify(savedProrabotkaGames))
   } 
+}
+
+export const getSavedGames = () => {
+  const savedGames = JSON.parse(localStorage.getItem('savedProrabotkaGames'))
+  return savedGames
 }

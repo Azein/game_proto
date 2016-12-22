@@ -1,4 +1,5 @@
 import * as types from './worldActionTypes.js';
+import * as globalTypes from '../../constants/globalActionTypes.js';
 import { combineReducers } from 'redux';
 
 const initialState = {
@@ -14,6 +15,8 @@ const time = (state = initialState, action) => {
       return {
         ...action.time
       }
+    case globalTypes.LOAD_GAME:
+      return action.world.time
     default:
       return state
   }

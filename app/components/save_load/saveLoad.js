@@ -1,15 +1,20 @@
 import React from 'react';
 import styles from './saveLoad.css';
-import { saveGame } from '../../engine/game_data/dataWorkers.js';
+import { saveGame, getSavedGames } from '../../engine/game_data/dataWorkers.js';
 
 export default class SaveLoad extends React.Component {
   constructor(){
     super()
     this.state = {
-      saveName: ''
+      saveName: '',
+      savedGames: {}
     }
   }
   
+  componentWillMount(){
+    this.setState({savedGames: getSavedGames()})
+  }
+
   handleSave = () => {
     saveGame(this.state.saveName, this.props.gameCharacter, this.props.world)
   }
@@ -21,6 +26,15 @@ export default class SaveLoad extends React.Component {
   }
 
   render(){
+    const savedGames = Object.keys(this.state.savedGames).map((key) => 
+      <div key={key} className={styles.new__save}>
+        <div className={styles.game__name}>{key}</div>
+        <div className='app__btn__blue'
+          onClick={() => this.props.loadGame(this.state.savedGames[key].gameCharacter, this.state.savedGames[key].world)}>
+          Загрузить игру
+        </div>
+      </div>
+    )
     return(
       <div className={styles.container}>
         <div className={styles.box}>
@@ -35,6 +49,7 @@ export default class SaveLoad extends React.Component {
             }
           </div>
         }
+        {savedGames}
         </div>
       </div>
     )
