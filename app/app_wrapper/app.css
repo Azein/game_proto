@@ -39,7 +39,7 @@ button:focus {
   outline: none;
 }
 
-/*Shared animations and visual effects*/
+/* Shared animations and visual effects */
 .transition__one {
   transition: all 0.1s ease-out;
 }
@@ -49,8 +49,7 @@ button:focus {
   to { opacity: 1; }
 }
 
-
-/*Shared UI styles*/
+/* Shared UI styles */
 
 .btn__teal {
   background-color: #009688;
@@ -68,7 +67,7 @@ button:focus {
   &:hover {
     background-color: #00695c;
   }
-  
+
   &.disabled {
     color: #333;
     background-color: #b0bec5;

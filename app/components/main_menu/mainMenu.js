@@ -33,8 +33,6 @@ export default class MainMenu extends React.Component{
 
 
 MainMenu.propTypes = {
-  changeLayer: React.PropTypes.func
+  changeLayer: React.PropTypes.func,
+  displaySaveLoad: React.PropTypes.func
 };
-
-
-/* dfgdfdffggggdsdываdg*/

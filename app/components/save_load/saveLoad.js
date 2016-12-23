@@ -55,3 +55,10 @@ export default class SaveLoad extends React.Component {
     )
   }
 }
+
+SaveLoad.propTypes = {
+  gameCharacter: React.PropTypes.object,
+  world: React.PropTypes.object,
+  status: React.PropTypes.string,
+  loadGame: React.PropTypes.func
+}

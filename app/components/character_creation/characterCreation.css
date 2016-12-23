@@ -152,7 +152,7 @@
   &:hover {
     background-color: #00695c;
   }
-  
+
   &.disabled {
     color: #333;
     background-color: #b0bec5;
@@ -188,7 +188,7 @@
   &:hover {
     background-color: #388e3c;
   }
-  
+
   &.disabled {
     color: #333;
     background-color: #b0bec5;
