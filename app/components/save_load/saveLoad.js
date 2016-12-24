@@ -15,8 +15,8 @@ export default class SaveLoad extends React.Component {
     this.setState({savedGames: getSavedGames()})
   }
 
-  handleSave = () => {
-    saveGame(this.state.saveName, this.props.gameCharacter, this.props.world)
+  handleSave = (saveName) => {
+    saveGame(saveName, this.props.gameCharacter, this.props.world)
   }
 
   handleSaveName = (e) => {
@@ -29,6 +29,9 @@ export default class SaveLoad extends React.Component {
     const savedGames = Object.keys(this.state.savedGames).map((key) => 
       <div key={key} className={styles.new__save}>
         <div className={styles.game__name}>{key}</div>
+        {this.props.status === 'save' &&
+          <div className='app__btn__teal' onClick={() => this.handleSave(key)}>Сохранить игру</div> 
+        }
         <div className='app__btn__blue'
           onClick={() => this.props.loadGame(this.state.savedGames[key].gameCharacter, this.state.savedGames[key].world)}>
           Загрузить игру
@@ -44,7 +47,7 @@ export default class SaveLoad extends React.Component {
               value={this.state.saveName} 
               onChange={this.handleSaveName}/>
             { this.state.saveName.length > 0
-              ? <div className='app__btn__teal' onClick={this.handleSave}>Сохранить игру</div>
+              ? <div className='app__btn__teal' onClick={() => this.handleSave(this.state.saveName)}>Сохранить игру</div>
               : <div className='app__btn__teal app__disabled'>Сохранить игру</div>
             }
           </div>
