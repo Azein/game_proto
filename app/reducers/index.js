@@ -14,7 +14,7 @@ const renderLayer = (state = initialState.renderLayer, action) => {
 	switch(action.type){
     case globalTypes.CHANGE_LAYER:
       return action.layer
-    case 'LOAD_CHARACTER':
+    case globalTypes.LOAD_CHARACTER:
       return 'CHARACTER_CREATION'
     case globalTypes.GAME_START:
       return 'GAME_LAYOUT'
