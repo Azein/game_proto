@@ -51,6 +51,18 @@ button:focus {
 
 /* Shared UI styles */
 
+.dark__overlay{
+  z-index: 9000;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn__teal {
   background-color: #009688;
   color: #fff;

@@ -52,3 +52,31 @@
   font-size: 20px;
   margin-right: 20px;
 }
+
+.overlay__box {
+  flex-grow: 0;
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay__box__text {
+  flex-grow: 0;
+  width: 100%;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay__box__buttons {
+  display: flex;
+  flex-grow: 0;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 40px;
+  justify-content: flex-end;
+}
