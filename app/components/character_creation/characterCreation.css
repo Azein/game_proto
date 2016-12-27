@@ -21,7 +21,7 @@
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   animation-name: 'app__arrival';
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
 }
 
 .header {

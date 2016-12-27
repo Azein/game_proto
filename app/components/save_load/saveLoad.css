@@ -60,6 +60,8 @@
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  animation-name: 'app__arrival';
+  animation-duration: 0.3s;
 }
 
 .overlay__box__text {

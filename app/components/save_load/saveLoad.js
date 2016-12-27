@@ -51,9 +51,11 @@ export default class SaveLoad extends React.Component {
   }
 
   handleSaveName = (e) => {
-    this.setState({
-      saveName: e.target.value
-    })
+    if (e.target.value.match(/^[a-zA-Zа-яА-я0-9 ]+$/) != null || e.target.value === ''){
+      this.setState({ saveName: e.target.value })
+    } else {
+      return false
+    }
   }
 
   render(){
