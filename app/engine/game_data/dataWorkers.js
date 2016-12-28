@@ -14,17 +14,24 @@ export const saveCharacter = (name, stats, origin) => {
     }
   }
 
-export const saveGame = (fileName, gameCharacter, world) => {
+export const saveGame = (fileName, gameCharacter, world, overwrite) => {
+  
   if(localStorage.getItem('savedProrabotkaGames') === null){
     localStorage.setItem('savedProrabotkaGames', '{}' )
     saveGame(fileName, gameCharacter, world)
   } else {
-    const savedProrabotkaGames = JSON.parse(localStorage.getItem('savedProrabotkaGames'));
-    savedProrabotkaGames[fileName] = {
-      gameCharacter: gameCharacter,
-      world: world
-    }
-    localStorage.setItem('savedProrabotkaGames', JSON.stringify(savedProrabotkaGames))
+    return new Promise ((resolve, reject) => {
+      const savedProrabotkaGames = JSON.parse(localStorage.getItem('savedProrabotkaGames'));
+      if (Object.keys(savedProrabotkaGames).some(key => key === fileName) && !overwrite ){
+        reject('Overwrite rights needed')
+      } 
+      savedProrabotkaGames[fileName] = {
+        gameCharacter: gameCharacter,
+        world: world
+      }
+      localStorage.setItem('savedProrabotkaGames', JSON.stringify(savedProrabotkaGames)) 
+      resolve('Game saved')     
+    })
   } 
 }
 
@@ -32,3 +39,4 @@ export const getSavedGames = () => {
   const savedGames = JSON.parse(localStorage.getItem('savedProrabotkaGames'))
   return savedGames
 }
+

@@ -20,5 +20,5 @@ export const testUserInput = (name, origin, stats) => {
     originSelected(origin),
     statsUsed(stats)
   ]
-  return !tests.some(e => e === false )
+  return !tests.some(test => test === false )
 }

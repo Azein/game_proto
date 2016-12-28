@@ -44,6 +44,8 @@ export default class SaveLoad extends React.Component {
 
   handleSave = (saveName) => {
     saveGame(saveName, this.props.gameCharacter, this.props.world)
+      .then(result => console.log(result))
+      .catch(error => console.log(error))
   }
 
   handleOverwrite = (saveName) => {
